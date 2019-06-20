@@ -11,11 +11,11 @@ import BrowserSyncWebpackPlugin from 'browser-sync-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 // mode flag
-const  MODE = 'development'
-const enabledSourceMap = MODE === 'development'
+const modeType = 'development'
+const enabledSourceMap = modeType === 'development'
 
 export default {
-  mode  : MODE,
+  mode  : modeType,
   entry : [_path.resolve(__dirname, 'application.js'), '@babel/polyfill'],
   output: {
     path: _path.resolve(__dirname, 'public/'),
