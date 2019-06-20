@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/mchihiro/webpack-temp.git",
-  "author": "MAKIZAWA Chihiro <makizawa@gnavi.co.jp>",
+  "author": "heroooo",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack --mode development",
