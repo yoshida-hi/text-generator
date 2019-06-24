@@ -1,3 +1,7 @@
-import { _test } from './component/_function'
+import { submit } from './component/_submit'
 
-_test()
+const $submit = document.querySelector('.js-submit')
+
+$submit.addEventListener('click', () => {
+  submit()
+})
