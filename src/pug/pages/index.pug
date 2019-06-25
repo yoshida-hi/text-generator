@@ -1,8 +1,17 @@
 extend ../layout/basic
 
 block main
-  div
-    input.js-input(type='text')
-    button.js-submit(type='button') テキストを作る
+  div.m-form
+    div.m-form__container
+      dl.m-form__item
+        dt 内容1
+        dd
+          input.js-input(type='text' name='input[0]')
+      dl.m-form__item
+        dt 内容2
+        dd
+          input.js-input(type='text' name='input[1]')
+    div.m-form__button
+      button.js-submit(type='button') テキストを作る
 
-  div.js-addtext
+  div.m-text-addbox.js-addtext ここにテキストが入ります
