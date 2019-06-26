@@ -1,10 +1,16 @@
 export const submit = () => {
-  const $input = document.querySelector('.js-input')
+  const inputList = document.querySelectorAll('.js-input')
+  const data = []
+
+  inputList.forEach(function(val) {
+    data.push(val.value)
+  })
+
+  const reText = data.join('')
+
   const $submitText = document.querySelector('.js-addtext')
-  //const data = $input.value
-  const data = $input.value
 
   $submitText.innerHTML = ''
   $submitText.classList.add('is-active')
-  $submitText.insertAdjacentHTML('afterbegin', data)
+  $submitText.insertAdjacentHTML('afterbegin', reText)
 }

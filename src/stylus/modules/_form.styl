@@ -2,26 +2,38 @@
   overflow hidden
   width 1024px
   margin 0 auto
+  padding-top 60px
 
   &__container
     overflow hidden
 
   &__item
     overflow hidden
+    margin 20px 0 0
     line-height 1.5
 
+    &:first-child
+      margin-top 0
+
     dt
-      float left
-      width 120px
+      display inline-block
+      vertical-align middle
+      width 80px
       font-size 18px
-      font-weight bold
 
     dd
-      overflow hidden
+      display inline-block
+      vertical-align middle
+      width 80%
+      margin 0
+
+      input
+        width 100%
+        padding 10px
 
   &__button
     width 200px
-    margin 0 auto
+    margin 40px auto 0
 
     button
       cursor pointer
