@@ -3,14 +3,64 @@ extend ../layout/basic
 block main
   div.m-form
     div.m-form__container
-      dl.m-form__item
-        dt 内容1
-        dd
-          input.js-input(type='text' name='input[0]')
-      dl.m-form__item
-        dt 内容2
-        dd
-          input.js-input(type='text' name='input[1]')
+      -
+        const list = [
+          {
+            title: '見出し1',
+            input: 'text',
+            inputName: 'input[0]',
+            selectName: 'select[0]',
+          },
+          {
+            title: '見出し2',
+            input: 'text',
+            inputName: 'input[1]',
+            selectName: 'select[1]',
+          },
+          {
+            title: '見出し3',
+            input: 'text',
+            inputName: 'input[2]',
+            selectName: 'select[2]',
+          },
+        ]
+      each item in list
+        dl.m-form__item
+          dt #{item.title}
+          dd
+            input.js-input(type=item.input name=item.inputName)
+            select.js-input(name=item.selectName, required)
+              option(value='', selected='selected') 選択してください
+              -
+                const opution = [
+                  {text: 'て',},
+                  {text: 'に',},
+                  {text: 'を',},
+                  {text: 'は',},
+                  {text: 'が',},
+                  {text: 'です。',},
+                  {text: 'ます。',},
+                ]
+              each val in opution
+                option(value=val.text) #{val.text}
+            ul.m-form__item-list
+              -
+                const checkbox = [
+                  {
+                    text: '、',
+                    name: 'checkbox[0]',
+                  },
+                  {
+                    text: '。',
+                    name: 'checkbox[1]',
+                  },
+                ]
+              each check in checkbox
+                li
+                  label.m-form__item-label
+                    input.js-input-checkbox(type='checkbox' name=check.name value=check.text) 
+                    | #{check.text}
+
     div.m-form__button
       button.js-submit(type='button') テキストを作る
 

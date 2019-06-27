@@ -27,9 +27,34 @@
       width 80%
       margin 0
 
-      input
-        width 100%
+      input[type=text]
+        width 60%
         padding 10px
+
+      select
+        height: 42px
+        margin-left 20px
+        padding 10px
+        line-height: 42px
+
+    &-list
+      overflow hidden
+      display inline-block
+      vertical-align middle
+      list-style none
+      margin 0 0 0 20px
+      padding 0
+
+      li
+        float left
+        margin-right 10px
+
+        &:last-child
+          margin-right 0
+
+    &-label
+      input[type=checkbox]
+        margin-right 10px;
 
   &__button
     width 200px
