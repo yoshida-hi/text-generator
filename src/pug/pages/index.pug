@@ -38,8 +38,8 @@ block main
                   {text: 'を',},
                   {text: 'は',},
                   {text: 'が',},
-                  {text: 'です。',},
-                  {text: 'ます。',},
+                  {text: 'です',},
+                  {text: 'ます',},
                 ]
               each val in opution
                 option(value=val.text) #{val.text}
@@ -58,7 +58,8 @@ block main
               each check in checkbox
                 li
                   label.m-form__item-label
-                    input.js-input-checkbox(type='checkbox' name=check.name value=check.text) 
+                    input.js-input(type='checkbox' name=check.name value=check.text) 
+                    //- input.js-input-checkbox(type='checkbox' name=check.name value=check.text) 
                     | #{check.text}
 
     div.m-form__button
