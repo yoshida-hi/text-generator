@@ -29,7 +29,7 @@ block main
           dt #{item.title}
           dd
             input.js-input(type=item.input name=item.inputName)
-            select.js-input(name=item.selectName, required)
+            select.js-input(name=item.selectName)
               option(value='', selected='selected') 選択してください
               -
                 const opution = [

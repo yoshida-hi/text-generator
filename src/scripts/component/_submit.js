@@ -1,17 +1,25 @@
 export const submit = () => {
   // inputList取得・配列準備
   const inputList = document.querySelectorAll('.js-input')
-  //const checkboxList = document.querySelectorAll('.js-input-checkbox')
   const data = []
 
-  //console.log(checkboxList)
-
   // 配列にvalueを注入
-  inputList.forEach(function(val) {
-    data.push(val.value)
-  })
+  for (let i = 0; inputList.length > i; i++) {
+    if (inputList[i].type === 'text') {
+      data.push(inputList[i].value)
+    } else if (inputList[i].selectedIndex) {
+      data.push(inputList[i].value)
+    } else if (inputList[i].type === 'checkbox') {
+      if (inputList[i].checked || inputList[i].checked === !undefined) {
+        data.push(inputList[i].value)
+      }
+    }
+  }
+  // inputList.forEach(function(val) {
+  //   data.push(val.value)
+  // })
 
-  // 配列からカンマを削除
+  // 配列を結合
   const reText = data.join('')
 
   // 投入側のDOMを取得
