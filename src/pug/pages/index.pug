@@ -43,7 +43,7 @@ block main
                 ]
               each val in opution
                 option(value=val.text) #{val.text}
-            ul.m-form__item-list
+            ul.m-form__item-list.js-checkbox-list
               -
                 const checkbox = [
                   {
@@ -58,7 +58,7 @@ block main
               each check in checkbox
                 li
                   label.m-form__item-label
-                    input.js-input(type='checkbox' name=check.name value=check.text) 
+                    input.js-input.js-input-checkbox(type='checkbox' name=check.name value=check.text) 
                     //- input.js-input-checkbox(type='checkbox' name=check.name value=check.text) 
                     | #{check.text}
 
