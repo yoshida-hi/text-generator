@@ -1,8 +1,10 @@
-export const checkbox = () => {
-  const checkboxList = document.querySelectorAll('.js-checkbox-list')
+export const checkbox = (elm) => {
+  //const $checkboxList = '.js-checkbox-list'
 
-  for (let i = 0; checkboxList.length > i; i++) {
-    const liList = checkboxList[i].childNodes    
-    console.log(liList)
-  }
+  // clickした要素 から ULまで
+  const eventDOM = elm.target
+  const parentDOM = eventDOM.parentNode.parentNode.parentNode
+
+  // checkされている要素
+  const checkDOM = elm.target.checked
 }

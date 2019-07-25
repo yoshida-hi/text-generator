@@ -15,9 +15,6 @@ export const submit = () => {
       }
     }
   }
-  // inputList.forEach(function(val) {
-  //   data.push(val.value)
-  // })
 
   // 配列を結合
   const reText = data.join('')

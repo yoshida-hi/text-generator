@@ -1,15 +1,14 @@
 import { submit } from './component/_submit'
 import { checkbox } from './component/_checkbox'
 
+// submit event
 const $submit = document.querySelector('.js-submit')
-const $checkboxList = document.querySelector('.js-checkbox-list')
-//const $checkboxList = document.querySelectorAll('.js-input-checkbox')
-//console.log($checkboxList)
-
 $submit.addEventListener('click', () => {
   submit()
 })
 
-$checkboxList.addEventListener('change', () => {
-  checkbox()
+// checkbox event
+const $checkboxList = document.querySelectorAll('input.js-input-checkbox')
+$checkboxList.forEach(() => {
+  document.addEventListener('change', checkbox)
 })
