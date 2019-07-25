@@ -1,5 +1,6 @@
 export const checkbox = (elm) => {
   //const $checkboxList = '.js-checkbox-list'
+  console.log('がおがおがお～～～ｗｗｗ');
 
   // clickした要素 から ULまで
   const eventDOM = elm.target

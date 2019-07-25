@@ -1,67 +1,73 @@
 extend ../layout/basic
-
 block main
   div.m-form
     div.m-form__container
       -
         const list = [
           {
-            title: '見出し1',
-            input: 'text',
-            inputName: 'input[0]',
-            selectName: 'select[0]',
+            title: '見出しA',
+            select: [
+              {option: 'て'},
+              {option: 'に'},
+              {option: 'を'},
+              {option: 'は'},
+              {option: 'が'},
+              {option: 'です'},
+              {option: 'ます'},
+            ],
+            radio: [
+              {value: '、', name: 'radio[0]'},
+              {value: '。', name: 'radio[0]'}
+            ]
           },
           {
-            title: '見出し2',
-            input: 'text',
-            inputName: 'input[1]',
-            selectName: 'select[1]',
+            title: '見出しB',
+            select: [
+              {option: 'て'},
+              {option: 'に'},
+              {option: 'を'},
+              {option: 'は'},
+              {option: 'が'},
+              {option: 'です'},
+              {option: 'ます'},
+            ],
+            radio: [
+              {value: '、', name: 'radio[1]'},
+              {value: '。', name: 'radio[1]'}
+            ]
           },
           {
-            title: '見出し3',
-            input: 'text',
-            inputName: 'input[2]',
-            selectName: 'select[2]',
-          },
+            title: '見出しC',
+            select: [
+              {option: 'て'},
+              {option: 'に'},
+              {option: 'を'},
+              {option: 'は'},
+              {option: 'が'},
+              {option: 'です'},
+              {option: 'ます'},
+            ],
+            radio: [
+              {value: '、', name: 'radio[2]'},
+              {value: '。', name: 'radio[2]'}
+            ]
+          }
         ]
       each item in list
         dl.m-form__item
           dt #{item.title}
           dd
-            input.js-input(type=item.input name=item.inputName)
-            select.js-input(name=item.selectName)
+            input.js-input(type='text' name='textname')
+            select.js-input(name='selectname')
               option(value='', selected='selected') 選択してください
-              -
-                const opution = [
-                  {text: 'て',},
-                  {text: 'に',},
-                  {text: 'を',},
-                  {text: 'は',},
-                  {text: 'が',},
-                  {text: 'です',},
-                  {text: 'ます',},
-                ]
-              each val in opution
-                option(value=val.text) #{val.text}
-            ul.m-form__item-list.js-checkbox-list
-              -
-                const checkbox = [
-                  {
-                    text: '、',
-                    name: 'checkbox[0]',
-                  },
-                  {
-                    text: '。',
-                    name: 'checkbox[1]',
-                  },
-                ]
-              each check in checkbox
+              each options in item.select
+                option(value=options.option) #{options.option}
+            ul.m-form__item-list.js-radio-list
+              each radios in item.radio
                 li
                   label.m-form__item-label
-                    input.js-input.js-input-checkbox(type='checkbox' name=check.name value=check.text) 
-                    //- input.js-input-checkbox(type='checkbox' name=check.name value=check.text) 
-                    | #{check.text}
-
+                    input.js-input.js-input-radio(type='radio' name=radios.name value=radios.value) 
+                    | #{radios.value}
     div.m-form__button
       button.js-submit(type='button') テキストを作る
 

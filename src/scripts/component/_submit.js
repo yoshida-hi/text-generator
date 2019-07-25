@@ -9,7 +9,7 @@ export const submit = () => {
       data.push(inputList[i].value)
     } else if (inputList[i].selectedIndex) {
       data.push(inputList[i].value)
-    } else if (inputList[i].type === 'checkbox') {
+    } else if (inputList[i].type === 'radio') {
       if (inputList[i].checked || inputList[i].checked === !undefined) {
         data.push(inputList[i].value)
       }
